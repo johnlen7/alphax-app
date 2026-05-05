@@ -3,306 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AlphaX | IPTV Player simples e rápido</title>
-    <meta name="description" content="Conheça o AlphaX: player IPTV com teste gratuito de 7 dias, ativação permanente e suporte direto para iPhone, iPad e Apple TV.">
+    <title>AlphaX | IPTV Player elegante e rápido</title>
+    <meta name="description" content="AlphaX é um IPTV Player rápido e elegante para iPhone, iPad e Apple TV, com teste grátis de 7 dias, ativação única e suporte direto.">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#090b13">
+    <meta name="theme-color" content="#080a0f">
     <meta property="og:title" content="AlphaX | IPTV Player">
-    <meta property="og:description" content="Teste grátis por 7 dias e ative o AlphaX de forma permanente com suporte direto.">
-    <meta property="og:image" content="logo.png">
-    <link rel="icon" href="logo.png">
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: #090b13;
-        --surface: rgba(18, 22, 32, 0.88);
-        --surface-strong: rgba(23, 29, 43, 0.96);
-        --text: #f7f8fc;
-        --muted: #b9c0d0;
-        --line: rgba(255, 255, 255, 0.12);
-        --gold: #f3b94d;
-        --blue: #5f8cff;
-        --green: #5dd39e;
-        --shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        color: var(--text);
-        background:
-          linear-gradient(135deg, rgba(95, 140, 255, 0.14), transparent 34%),
-          linear-gradient(180deg, #090b13 0%, #111827 56%, #090b13 100%);
-      }
-
-      a { color: inherit; }
-
-      .shell {
-        width: min(1120px, calc(100% - 32px));
-        margin: 0 auto;
-      }
-
-      .topbar {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        border-bottom: 1px solid var(--line);
-        background: rgba(9, 11, 19, 0.82);
-        backdrop-filter: blur(18px);
-      }
-
-      .topbar-inner {
-        min-height: 72px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-      }
-
-      .brand,
-      .nav,
-      .lang-switch,
-      .actions {
-        display: flex;
-        align-items: center;
-      }
-
-      .brand {
-        gap: 12px;
-        text-decoration: none;
-      }
-
-      .brand img {
-        width: 44px;
-        height: 44px;
-        border-radius: 8px;
-      }
-
-      .brand strong { display: block; font-size: 18px; }
-      .brand span span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-
-      .nav,
-      .lang-switch,
-      .actions {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .nav a,
-      .button,
-      .lang-switch button {
-        min-height: 42px;
-        border-radius: 8px;
-        font: inherit;
-        font-weight: 750;
-      }
-
-      .nav a,
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 16px;
-        text-decoration: none;
-      }
-
-      .nav a,
-      .button.secondary,
-      .lang-switch button {
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.045);
-        color: var(--text);
-      }
-
-      .lang-switch button {
-        cursor: pointer;
-        padding: 0 12px;
-      }
-
-      .lang-switch button[aria-pressed="true"] {
-        border-color: rgba(243, 185, 77, 0.78);
-        background: rgba(243, 185, 77, 0.14);
-      }
-
-      .button.primary {
-        border: 0;
-        background: linear-gradient(135deg, var(--gold), #ffd978);
-        color: #211504;
-      }
-
-      main { padding: 50px 0 40px; }
-
-      .hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
-        gap: 22px;
-        align-items: stretch;
-      }
-
-      .panel,
-      .card,
-      .metric {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
-      }
-
-      .hero-copy {
-        padding: clamp(26px, 4vw, 42px);
-      }
-
-      .eyebrow {
-        color: var(--gold);
-        font-size: 13px;
-        font-weight: 850;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
-
-      h1 {
-        max-width: 11ch;
-        margin: 14px 0 16px;
-        font-size: clamp(42px, 7vw, 76px);
-        line-height: 0.96;
-        letter-spacing: 0;
-      }
-
-      .lead {
-        max-width: 64ch;
-        margin: 0;
-        color: var(--muted);
-        font-size: 18px;
-        line-height: 1.7;
-      }
-
-      .actions { margin-top: 26px; }
-
-      .side {
-        padding: 24px;
-        background: var(--surface-strong);
-      }
-
-      .side h2,
-      .section h2 {
-        margin: 0 0 14px;
-        font-size: 22px;
-      }
-
-      .checklist,
-      .steps {
-        display: grid;
-        gap: 12px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .checklist li,
-      .steps li {
-        padding: 13px 14px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--muted);
-        line-height: 1.55;
-      }
-
-      .price-row {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .metric {
-        padding: 16px;
-        background: rgba(255, 255, 255, 0.045);
-      }
-
-      .metric strong {
-        display: block;
-        color: var(--green);
-        font-size: 24px;
-        margin-bottom: 4px;
-      }
-
-      .metric span {
-        color: var(--muted);
-        line-height: 1.45;
-      }
-
-      .section { margin-top: 26px; }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-
-      .card {
-        padding: 22px;
-        background: rgba(255, 255, 255, 0.045);
-      }
-
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 18px;
-      }
-
-      .card p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
-      .footer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 12px;
-        margin-top: 42px;
-        padding-top: 22px;
-        border-top: 1px solid var(--line);
-        color: var(--muted);
-      }
-
-      .footer p { margin: 0; }
-
-      @media (max-width: 880px) {
-        .topbar-inner,
-        .hero,
-        .grid,
-        .price-row {
-          grid-template-columns: 1fr;
-        }
-
-        .topbar-inner {
-          display: grid;
-          padding: 14px 0;
-        }
-
-        main { padding-top: 32px; }
-      }
-
-      @media (max-width: 520px) {
-        .shell { width: min(100% - 24px, 1120px); }
-        .nav a,
-        .button { width: 100%; }
-        .nav,
-        .actions { align-items: stretch; }
-        h1 { font-size: clamp(38px, 13vw, 54px); }
-      }
-    </style>
+    <meta property="og:description" content="Player IPTV elegante para iPhone, iPad e Apple TV, com suporte multilíngue.">
+    <meta property="og:image" content="logo-256.png">
+    <link rel="icon" href="logo-256.png">
+    <link rel="stylesheet" href="assets/site.css">
   </head>
-  <body>
-    <header class="topbar">
-      <div class="shell topbar-inner">
+  <body data-page="home">
+    <header class="site-header">
+      <div class="shell topbar">
         <a class="brand" href="./" aria-label="AlphaX">
-          <img src="logo.png" alt="AlphaX">
+          <img src="logo-256.png" alt="AlphaX">
           <span>
             <strong>AlphaX</strong>
             <span data-i18n="brandTag">IPTV Player</span>
@@ -311,7 +26,8 @@
         <nav class="nav" aria-label="Navegação">
           <a href="#recursos" data-i18n="navFeatures">Recursos</a>
           <a href="support/" data-i18n="navSupport">Suporte</a>
-          <div class="lang-switch" aria-label="Selecionar idioma">
+          <a href="privacy/" data-i18n="navPrivacy">Privacidade</a>
+          <div class="language" aria-label="Selecionar idioma">
             <button type="button" data-lang-button="pt-BR" aria-pressed="true">PT</button>
             <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
             <button type="button" data-lang-button="es" aria-pressed="false">ES</button>
@@ -321,188 +37,82 @@
     </header>
 
     <main class="shell">
-      <section class="hero" aria-labelledby="title">
-        <article class="panel hero-copy">
-          <div class="eyebrow" data-i18n="eyebrow">Site oficial</div>
-          <h1 id="title" data-i18n="title">AlphaX sem complicação</h1>
-          <p class="lead" data-i18n="lead">Assista suas listas IPTV em uma experiência simples, com teste grátis por 7 dias, ativação permanente e suporte direto quando precisar.</p>
+      <section class="hero" aria-labelledby="home-title">
+        <article class="hero-copy">
+          <span class="eyebrow" data-i18n="eyebrowHome">Player IPTV para Apple</span>
+          <h1 id="home-title" data-i18n="homeH1">Streaming simples. Visual premium.</h1>
+          <p class="lead" data-i18n="homeLead">O AlphaX organiza suas listas IPTV em uma experiência limpa, rápida e fácil de ativar em iPhone, iPad e Apple TV.</p>
           <div class="actions">
-            <a class="button primary" href="support/" data-i18n="supportButton">Falar com suporte</a>
-            <a class="button secondary" href="#recursos" data-i18n="featuresButton">Ver benefícios</a>
+            <a class="button primary" href="support/" data-i18n="primarySupport">Abrir suporte</a>
+            <a class="button secondary" href="#recursos" data-i18n="secondaryFeatures">Ver recursos</a>
           </div>
         </article>
 
-        <aside class="panel side" aria-labelledby="quick-title">
-          <h2 id="quick-title" data-i18n="beforeTitle">Antes de começar</h2>
-          <ul class="checklist" data-i18n-list="beforeList"></ul>
-          <div class="price-row" aria-label="Informações comerciais">
-            <div class="metric">
-              <strong data-i18n="trialTitle">7 dias</strong>
-              <span data-i18n="trialText">Teste gratuito antes de decidir pela ativação.</span>
+        <aside class="device" aria-label="AlphaX app preview">
+          <div class="device-screen">
+            <div class="status-row">
+              <span class="status-pill" data-i18n="deviceReady">Pronto para testar</span>
+              <span class="mini-pill">AlphaX</span>
             </div>
-            <div class="metric">
-              <strong data-i18n="activationTitle">1 taxa</strong>
-              <span data-i18n="activationText">Pagamento único para liberar acesso permanente.</span>
+            <div class="screen-logo">
+              <img src="logo-256.png" alt="AlphaX">
+              <strong>AlphaX</strong>
+            </div>
+            <div>
+              <div class="feature-row">
+                <span data-i18n="deviceOne">7 dias grátis</span>
+                <span data-i18n="deviceTwo">Ativação única</span>
+                <span data-i18n="deviceThree">Suporte direto</span>
+              </div>
+              <div class="meta-row" style="margin-top: 12px;">
+                <span data-i18n="deviceFooterOne">iPhone</span>
+                <span data-i18n="deviceFooterTwo">iPad</span>
+                <span data-i18n="deviceFooterThree">Apple TV</span>
+              </div>
             </div>
           </div>
         </aside>
       </section>
 
       <section id="recursos" class="section" aria-labelledby="features-title">
-        <h2 id="features-title" data-i18n="featuresTitle">O que melhora no uso</h2>
+        <div class="section-header">
+          <h2 id="features-title" data-i18n="featuresTitle">Feito para parecer simples</h2>
+          <p data-i18n="featuresText">A página precisa passar confiança em poucos segundos: benefício claro, suporte fácil e política de privacidade objetiva.</p>
+        </div>
         <div class="grid">
-          <article class="card">
-            <h3 data-i18n="featureOneTitle">Teste sem pressa</h3>
-            <p data-i18n="featureOneText">Use por 7 dias para validar sua lista, sua internet e seus aparelhos antes de ativar.</p>
+          <article class="card accent">
+            <h3 data-i18n="featureOneTitle">Teste antes de ativar</h3>
+            <p data-i18n="featureOneText">Use o período gratuito para confirmar lista, rede e aparelho antes da ativação permanente.</p>
           </article>
-          <article class="card">
-            <h3 data-i18n="featureTwoTitle">Ativação permanente</h3>
-            <p data-i18n="featureTwoText">Depois do teste, a taxa única libera o AlphaX sem mensalidade do aplicativo.</p>
+          <article class="card blue">
+            <h3 data-i18n="featureTwoTitle">Ativação transparente</h3>
+            <p data-i18n="featureTwoText">A mensagem comercial é direta: teste gratuito e uma taxa única para liberar o app.</p>
           </article>
-          <article class="card">
-            <h3 data-i18n="featureThreeTitle">Ajuda objetiva</h3>
-            <p data-i18n="featureThreeText">A página de suporte mostra exatamente quais dados enviar para resolver mais rápido.</p>
+          <article class="card green">
+            <h3 data-i18n="featureThreeTitle">Multilíngue real</h3>
+            <p data-i18n="featureThreeText">Português, inglês e espanhol ficam disponíveis em todas as páginas principais.</p>
           </article>
         </div>
       </section>
 
-      <section class="section panel side" aria-labelledby="steps-title">
-        <h2 id="steps-title" data-i18n="stepsTitle">Como pedir suporte</h2>
-        <ol class="steps" data-i18n-list="stepsList"></ol>
+      <section class="section notice" aria-labelledby="flow-title">
+        <div class="section-header">
+          <h2 id="flow-title" data-i18n="stepsTitle">Fluxo rápido</h2>
+          <p data-i18n="stepsText">O visitante entende o que fazer sem depender de explicações longas.</p>
+        </div>
+        <ol class="list steps" data-i18n-list="homeSteps">
+          <li>Instale ou atualize o AlphaX.</li>
+          <li>Teste sua lista IPTV durante os 7 dias gratuitos.</li>
+          <li>Use o suporte se precisar ativar, localizar o ID ou corrigir erro.</li>
+        </ol>
       </section>
 
       <footer class="footer">
-        <p data-i18n="footerText">AlphaX. Site comercial e central de suporte.</p>
+        <p data-i18n="footerHome">AlphaX. Site oficial e central de suporte.</p>
         <p><a href="privacy/" data-i18n="privacyLink">Política de Privacidade</a></p>
       </footer>
     </main>
 
-    <script>
-      const translations = {
-        "pt-BR": {
-          brandTag: "IPTV Player",
-          navFeatures: "Recursos",
-          navSupport: "Suporte",
-          eyebrow: "Site oficial",
-          title: "AlphaX sem complicação",
-          lead: "Assista suas listas IPTV em uma experiência simples, com teste grátis por 7 dias, ativação permanente e suporte direto quando precisar.",
-          supportButton: "Falar com suporte",
-          featuresButton: "Ver benefícios",
-          beforeTitle: "Antes de começar",
-          beforeList: ["Instale ou atualize o app AlphaX.", "Teste sua lista IPTV durante o período gratuito.", "Guarde o ID do dispositivo para ativação e suporte."],
-          trialTitle: "7 dias",
-          trialText: "Teste gratuito antes de decidir pela ativação.",
-          activationTitle: "1 taxa",
-          activationText: "Pagamento único para liberar acesso permanente.",
-          featuresTitle: "O que melhora no uso",
-          featureOneTitle: "Teste sem pressa",
-          featureOneText: "Use por 7 dias para validar sua lista, sua internet e seus aparelhos antes de ativar.",
-          featureTwoTitle: "Ativação permanente",
-          featureTwoText: "Depois do teste, a taxa única libera o AlphaX sem mensalidade do aplicativo.",
-          featureThreeTitle: "Ajuda objetiva",
-          featureThreeText: "A página de suporte mostra exatamente quais dados enviar para resolver mais rápido.",
-          stepsTitle: "Como pedir suporte",
-          stepsList: ["Abra a página de suporte.", "Informe modelo do aparelho, versão do sistema e ID do dispositivo.", "Descreva o erro com o texto que aparece na tela."],
-          footerText: "AlphaX. Site comercial e central de suporte.",
-          privacyLink: "Política de Privacidade"
-        },
-        en: {
-          brandTag: "IPTV Player",
-          navFeatures: "Features",
-          navSupport: "Support",
-          eyebrow: "Official site",
-          title: "AlphaX made simple",
-          lead: "Watch your IPTV playlists in a clean experience with a 7-day free trial, permanent activation, and direct support when you need it.",
-          supportButton: "Contact support",
-          featuresButton: "See benefits",
-          beforeTitle: "Before you start",
-          beforeList: ["Install or update the AlphaX app.", "Test your IPTV playlist during the free period.", "Keep your device ID for activation and support."],
-          trialTitle: "7 days",
-          trialText: "Free trial before choosing activation.",
-          activationTitle: "1 fee",
-          activationText: "One-time payment to unlock permanent access.",
-          featuresTitle: "What improves your use",
-          featureOneTitle: "Trial without pressure",
-          featureOneText: "Use 7 days to validate your playlist, internet, and devices before activation.",
-          featureTwoTitle: "Permanent activation",
-          featureTwoText: "After the trial, the one-time fee unlocks AlphaX with no app monthly fee.",
-          featureThreeTitle: "Clear help",
-          featureThreeText: "The support page shows exactly what to send so issues can be solved faster.",
-          stepsTitle: "How to request support",
-          stepsList: ["Open the support page.", "Send device model, system version, and device ID.", "Describe the issue with the exact text shown on screen."],
-          footerText: "AlphaX. Commercial site and support center.",
-          privacyLink: "Privacy Policy"
-        },
-        es: {
-          brandTag: "IPTV Player",
-          navFeatures: "Recursos",
-          navSupport: "Soporte",
-          eyebrow: "Sitio oficial",
-          title: "AlphaX sin complicación",
-          lead: "Mira tus listas IPTV en una experiencia simple, con prueba gratis por 7 días, activación permanente y soporte directo cuando lo necesites.",
-          supportButton: "Contactar soporte",
-          featuresButton: "Ver beneficios",
-          beforeTitle: "Antes de empezar",
-          beforeList: ["Instala o actualiza la app AlphaX.", "Prueba tu lista IPTV durante el período gratuito.", "Guarda el ID del dispositivo para activación y soporte."],
-          trialTitle: "7 días",
-          trialText: "Prueba gratuita antes de decidir la activación.",
-          activationTitle: "1 tarifa",
-          activationText: "Pago único para liberar acceso permanente.",
-          featuresTitle: "Qué mejora en el uso",
-          featureOneTitle: "Prueba sin presión",
-          featureOneText: "Usa 7 días para validar tu lista, internet y dispositivos antes de activar.",
-          featureTwoTitle: "Activación permanente",
-          featureTwoText: "Después de la prueba, la tarifa única libera AlphaX sin mensualidad de la app.",
-          featureThreeTitle: "Ayuda clara",
-          featureThreeText: "La página de soporte muestra exactamente qué enviar para resolver más rápido.",
-          stepsTitle: "Cómo pedir soporte",
-          stepsList: ["Abre la página de soporte.", "Envía modelo del dispositivo, versión del sistema e ID del dispositivo.", "Describe el error con el texto exacto que aparece en pantalla."],
-          footerText: "AlphaX. Sitio comercial y centro de soporte.",
-          privacyLink: "Política de Privacidad"
-        }
-      };
-
-      const buttons = document.querySelectorAll("[data-lang-button]");
-
-      function getPreferredLanguage() {
-        const saved = localStorage.getItem("alphax-language");
-        if (saved && translations[saved]) return saved;
-        const browserLang = (navigator.language || "pt-BR").toLowerCase();
-        if (browserLang.startsWith("en")) return "en";
-        if (browserLang.startsWith("es")) return "es";
-        return "pt-BR";
-      }
-
-      function renderList(node, items) {
-        node.innerHTML = "";
-        items.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          node.appendChild(li);
-        });
-      }
-
-      function setLanguage(lang) {
-        const copy = translations[lang] || translations["pt-BR"];
-        document.documentElement.lang = lang;
-        document.title = lang === "en" ? "AlphaX | Simple IPTV Player" : lang === "es" ? "AlphaX | IPTV Player simple" : "AlphaX | IPTV Player simples e rápido";
-        document.querySelectorAll("[data-i18n]").forEach((node) => {
-          node.textContent = copy[node.dataset.i18n] || "";
-        });
-        document.querySelectorAll("[data-i18n-list]").forEach((node) => {
-          renderList(node, copy[node.dataset.i18nList] || []);
-        });
-        buttons.forEach((button) => {
-          button.setAttribute("aria-pressed", String(button.dataset.langButton === lang));
-        });
-        localStorage.setItem("alphax-language", lang);
-      }
-
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => setLanguage(button.dataset.langButton));
-      });
-
-      setLanguage(getPreferredLanguage());
-    </script>
+    <script src="assets/site.js"></script>
   </body>
 </html>

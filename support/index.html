@@ -4,231 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AlphaX | Suporte</title>
-    <meta name="description" content="Suporte AlphaX com orientações rápidas para ativação, teste grátis, erros de conexão e identificação do dispositivo.">
+    <meta name="description" content="Suporte AlphaX com informações para ativação, teste grátis, conexão, ID do dispositivo e erros do aplicativo.">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#090b13">
-    <link rel="icon" href="../logo.png">
-    <style>
-      :root {
-        color-scheme: dark;
-        --bg: #090b13;
-        --surface: rgba(18, 22, 32, 0.9);
-        --surface-strong: rgba(23, 29, 43, 0.97);
-        --text: #f7f8fc;
-        --muted: #b9c0d0;
-        --line: rgba(255, 255, 255, 0.12);
-        --gold: #f3b94d;
-        --blue: #5f8cff;
-        --danger: #ff756f;
-        --shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        color: var(--text);
-        background: linear-gradient(180deg, #090b13 0%, #111827 58%, #090b13 100%);
-      }
-
-      a { color: inherit; }
-      .shell { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
-
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        border-bottom: 1px solid var(--line);
-        background: rgba(9, 11, 19, 0.84);
-        backdrop-filter: blur(18px);
-      }
-
-      .topbar,
-      .brand,
-      .links,
-      .lang-switch,
-      .actions {
-        display: flex;
-        align-items: center;
-      }
-
-      .topbar {
-        min-height: 72px;
-        justify-content: space-between;
-        gap: 18px;
-      }
-
-      .brand { gap: 12px; text-decoration: none; }
-      .brand img { width: 44px; height: 44px; border-radius: 8px; }
-      .brand strong { display: block; font-size: 18px; }
-      .brand span span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-
-      .links,
-      .lang-switch,
-      .actions {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-
-      .links a,
-      .button,
-      .lang-switch button {
-        min-height: 42px;
-        border-radius: 8px;
-        font: inherit;
-        font-weight: 750;
-      }
-
-      .links a,
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 16px;
-        text-decoration: none;
-      }
-
-      .links a,
-      .button.secondary,
-      .lang-switch button {
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.045);
-        color: var(--text);
-      }
-
-      .lang-switch button { cursor: pointer; padding: 0 12px; }
-      .lang-switch button[aria-pressed="true"] { border-color: rgba(243, 185, 77, 0.78); background: rgba(243, 185, 77, 0.14); }
-
-      .button.primary {
-        border: 0;
-        background: linear-gradient(135deg, var(--gold), #ffd978);
-        color: #211504;
-      }
-
-      main { padding: 50px 0 40px; }
-
-      .hero,
-      .grid {
-        display: grid;
-        gap: 18px;
-      }
-
-      .hero { grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr); }
-      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
-      .panel,
-      .card {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--surface);
-        box-shadow: var(--shadow);
-      }
-
-      .hero-copy,
-      .side,
-      .section,
-      .card {
-        padding: clamp(22px, 3vw, 34px);
-      }
-
-      .side { background: var(--surface-strong); }
-
-      .eyebrow {
-        color: var(--gold);
-        font-size: 13px;
-        font-weight: 850;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-      }
-
-      h1 {
-        margin: 14px 0 16px;
-        font-size: clamp(40px, 7vw, 70px);
-        line-height: 0.96;
-        letter-spacing: 0;
-      }
-
-      h2 { margin: 0 0 14px; font-size: 22px; }
-      h3 { margin: 0 0 8px; font-size: 18px; }
-      p { margin: 0; }
-
-      .lead,
-      .card p,
-      .list li,
-      .footer {
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
-      .lead { font-size: 18px; }
-      .actions { margin-top: 24px; }
-
-      .list {
-        display: grid;
-        gap: 12px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .list li {
-        padding: 13px 14px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.04);
-      }
-
-      .section { margin-top: 22px; }
-      .note { border-left: 4px solid var(--blue); }
-      .warning { border-left: 4px solid var(--danger); }
-
-      .footer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 12px;
-        margin-top: 42px;
-        padding-top: 22px;
-        border-top: 1px solid var(--line);
-      }
-
-      @media (max-width: 880px) {
-        .topbar,
-        .hero,
-        .grid {
-          display: grid;
-          grid-template-columns: 1fr;
-        }
-
-        .topbar { padding: 14px 0; }
-        main { padding-top: 32px; }
-      }
-
-      @media (max-width: 520px) {
-        .shell { width: min(100% - 24px, 1120px); }
-        .links a,
-        .button { width: 100%; }
-        .links,
-        .actions { align-items: stretch; }
-      }
-    </style>
+    <meta name="theme-color" content="#080a0f">
+    <link rel="icon" href="../logo-256.png">
+    <link rel="stylesheet" href="../assets/site.css">
   </head>
-  <body>
-    <header>
+  <body data-page="support">
+    <header class="site-header">
       <div class="shell topbar">
         <a class="brand" href="../" aria-label="AlphaX">
-          <img src="../logo.png" alt="AlphaX">
+          <img src="../logo-256.png" alt="AlphaX">
           <span>
             <strong>AlphaX</strong>
-            <span data-i18n="brandTag">Suporte</span>
+            <span data-i18n="brandTag">IPTV Player</span>
           </span>
         </a>
-        <nav class="links" aria-label="Navegação">
+        <nav class="nav" aria-label="Navegação">
           <a href="../" data-i18n="navHome">Início</a>
           <a href="#ajuda" data-i18n="navHelp">Ajuda</a>
-          <div class="lang-switch" aria-label="Selecionar idioma">
+          <a href="../privacy/" data-i18n="navPrivacy">Privacidade</a>
+          <div class="language" aria-label="Selecionar idioma">
             <button type="button" data-lang-button="pt-BR" aria-pressed="true">PT</button>
             <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
             <button type="button" data-lang-button="es" aria-pressed="false">ES</button>
@@ -238,188 +34,74 @@
     </header>
 
     <main class="shell">
-      <section class="hero" aria-labelledby="support-title">
+      <section class="hero compact" aria-labelledby="support-title">
         <article class="panel hero-copy">
-          <div class="eyebrow" data-i18n="eyebrow">Central de suporte</div>
-          <h1 id="support-title" data-i18n="title">Resolva mais rápido</h1>
-          <p class="lead" data-i18n="lead">Use esta página para enviar as informações certas sobre ativação, conexão, lista IPTV ou erro exibido no AlphaX.</p>
+          <span class="eyebrow" data-i18n="supportEyebrow">Central de suporte</span>
+          <h1 id="support-title" class="page-title" data-i18n="supportH1">Ajuda rápida para continuar assistindo.</h1>
+          <p class="lead" data-i18n="supportLead">Envie as informações certas sobre ativação, conexão, lista IPTV ou erro exibido no app. Isso reduz idas e voltas no atendimento.</p>
           <div class="actions">
-            <a class="button primary" href="https://github.com/johnlen7/alphax-ios/issues/new" target="_blank" rel="noreferrer" data-i18n="ticketButton">Abrir chamado</a>
+            <a class="button primary" href="mailto:alphaxapp@gmail.com" data-i18n="emailButton">Enviar e-mail</a>
             <a class="button secondary" href="../" data-i18n="backButton">Voltar ao site</a>
           </div>
         </article>
 
-        <aside class="panel side">
-          <h2 data-i18n="sendTitle">Envie junto</h2>
-          <ul class="list" data-i18n-list="sendList"></ul>
+        <aside class="panel side-panel">
+          <h2 data-i18n="sendTitle">Inclua no contato</h2>
+          <ul class="list" data-i18n-list="sendList">
+            <li>Modelo do aparelho: iPhone, iPad ou Apple TV.</li>
+            <li>Versão do iOS, iPadOS ou tvOS.</li>
+            <li>ID do dispositivo exibido no AlphaX.</li>
+            <li>Texto exato da mensagem de erro, se houver.</li>
+          </ul>
         </aside>
       </section>
 
-      <section id="ajuda" class="panel section">
-        <h2 data-i18n="stepsTitle">Verificações rápidas</h2>
+      <section id="ajuda" class="section" aria-labelledby="checks-title">
+        <div class="section-header">
+          <h2 id="checks-title" data-i18n="checksTitle">Verificações antes de chamar</h2>
+        </div>
         <div class="grid">
-          <article class="card note">
-            <h3 data-i18n="stepOneTitle">1. Reinicie o app</h3>
-            <p data-i18n="stepOneText">Feche o AlphaX e abra novamente para limpar uma tentativa travada.</p>
+          <article class="card blue">
+            <h3 data-i18n="checkOneTitle">Reinicie o app</h3>
+            <p data-i18n="checkOneText">Feche o AlphaX e abra novamente para limpar uma tentativa travada.</p>
           </article>
-          <article class="card note">
-            <h3 data-i18n="stepTwoTitle">2. Teste a rede</h3>
-            <p data-i18n="stepTwoText">Se a lista não carregar, tente outra internet ou reinicie o Wi-Fi.</p>
+          <article class="card green">
+            <h3 data-i18n="checkTwoTitle">Teste a internet</h3>
+            <p data-i18n="checkTwoText">Se a lista não carregar, tente outra rede ou reinicie o Wi-Fi.</p>
           </article>
-          <article class="card warning">
-            <h3 data-i18n="stepThreeTitle">3. Confirme a ativação</h3>
-            <p data-i18n="stepThreeText">Confira se o ID do dispositivo usado na ativação é o mesmo exibido no app.</p>
+          <article class="card red">
+            <h3 data-i18n="checkThreeTitle">Confirme o ID</h3>
+            <p data-i18n="checkThreeText">A ativação precisa usar o mesmo ID exibido no aparelho.</p>
           </article>
         </div>
       </section>
 
-      <section class="grid section">
-        <article class="card">
-          <h3 data-i18n="cardOneTitle">Teste grátis</h3>
-          <p data-i18n="cardOneText">O AlphaX pode ser testado por 7 dias antes da ativação permanente.</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="cardTwoTitle">Ativação única</h3>
-          <p data-i18n="cardTwoText">Após o teste, uma taxa única libera o acesso permanente ao aplicativo.</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="cardThreeTitle">Privacidade</h3>
-          <p data-i18n="cardThreeText">Envie apenas dados necessários para suporte: aparelho, versão, ID e erro.</p>
-        </article>
+      <section class="section" aria-labelledby="support-info-title">
+        <div class="section-header">
+          <h2 id="support-info-title" data-i18n="supportCardsTitle">Informações importantes</h2>
+        </div>
+        <div class="grid">
+          <article class="card accent">
+            <h3 data-i18n="cardTrialTitle">Teste grátis</h3>
+            <p data-i18n="cardTrialText">O AlphaX pode ser testado por 7 dias antes da ativação permanente.</p>
+          </article>
+          <article class="card blue">
+            <h3 data-i18n="cardActivationTitle">Ativação única</h3>
+            <p data-i18n="cardActivationText">Depois do teste, uma taxa única libera o acesso permanente ao aplicativo.</p>
+          </article>
+          <article class="card green">
+            <h3 data-i18n="cardPrivacyTitle">Privacidade</h3>
+            <p data-i18n="cardPrivacyText">Envie apenas dados necessários para suporte: aparelho, versão, ID e erro.</p>
+          </article>
+        </div>
       </section>
 
       <footer class="footer">
-        <span data-i18n="footerText">AlphaX suporte.</span>
-        <a href="../privacy/" data-i18n="privacyLink">Política de Privacidade</a>
+        <p data-i18n="footerSupport">AlphaX suporte.</p>
+        <p><a href="../privacy/" data-i18n="privacyLink">Política de Privacidade</a></p>
       </footer>
     </main>
 
-    <script>
-      const translations = {
-        "pt-BR": {
-          brandTag: "Suporte",
-          navHome: "Início",
-          navHelp: "Ajuda",
-          eyebrow: "Central de suporte",
-          title: "Resolva mais rápido",
-          lead: "Use esta página para enviar as informações certas sobre ativação, conexão, lista IPTV ou erro exibido no AlphaX.",
-          ticketButton: "Abrir chamado",
-          backButton: "Voltar ao site",
-          sendTitle: "Envie junto",
-          sendList: ["Modelo do aparelho: iPhone, iPad ou Apple TV.", "Versão do sistema e versão do AlphaX.", "ID do dispositivo exibido no app.", "Texto exato da mensagem de erro, se houver."],
-          stepsTitle: "Verificações rápidas",
-          stepOneTitle: "1. Reinicie o app",
-          stepOneText: "Feche o AlphaX e abra novamente para limpar uma tentativa travada.",
-          stepTwoTitle: "2. Teste a rede",
-          stepTwoText: "Se a lista não carregar, tente outra internet ou reinicie o Wi-Fi.",
-          stepThreeTitle: "3. Confirme a ativação",
-          stepThreeText: "Confira se o ID do dispositivo usado na ativação é o mesmo exibido no app.",
-          cardOneTitle: "Teste grátis",
-          cardOneText: "O AlphaX pode ser testado por 7 dias antes da ativação permanente.",
-          cardTwoTitle: "Ativação única",
-          cardTwoText: "Após o teste, uma taxa única libera o acesso permanente ao aplicativo.",
-          cardThreeTitle: "Privacidade",
-          cardThreeText: "Envie apenas dados necessários para suporte: aparelho, versão, ID e erro.",
-          footerText: "AlphaX suporte.",
-          privacyLink: "Política de Privacidade"
-        },
-        en: {
-          brandTag: "Support",
-          navHome: "Home",
-          navHelp: "Help",
-          eyebrow: "Support center",
-          title: "Solve it faster",
-          lead: "Use this page to send the right details about activation, connection, IPTV playlist, or any error shown in AlphaX.",
-          ticketButton: "Open ticket",
-          backButton: "Back to site",
-          sendTitle: "Send this too",
-          sendList: ["Device model: iPhone, iPad, or Apple TV.", "System version and AlphaX version.", "Device ID shown in the app.", "Exact error text, if there is one."],
-          stepsTitle: "Quick checks",
-          stepOneTitle: "1. Restart the app",
-          stepOneText: "Close AlphaX and open it again to clear a stuck attempt.",
-          stepTwoTitle: "2. Test the network",
-          stepTwoText: "If the playlist does not load, try another connection or restart Wi-Fi.",
-          stepThreeTitle: "3. Confirm activation",
-          stepThreeText: "Make sure the device ID used for activation matches the one shown in the app.",
-          cardOneTitle: "Free trial",
-          cardOneText: "AlphaX can be tested for 7 days before permanent activation.",
-          cardTwoTitle: "One-time activation",
-          cardTwoText: "After the trial, one fee unlocks permanent app access.",
-          cardThreeTitle: "Privacy",
-          cardThreeText: "Send only support data that is needed: device, version, ID, and error.",
-          footerText: "AlphaX support.",
-          privacyLink: "Privacy Policy"
-        },
-        es: {
-          brandTag: "Soporte",
-          navHome: "Inicio",
-          navHelp: "Ayuda",
-          eyebrow: "Centro de soporte",
-          title: "Resuelve más rápido",
-          lead: "Usa esta página para enviar los datos correctos sobre activación, conexión, lista IPTV o error mostrado en AlphaX.",
-          ticketButton: "Abrir solicitud",
-          backButton: "Volver al sitio",
-          sendTitle: "Envía esto también",
-          sendList: ["Modelo del dispositivo: iPhone, iPad o Apple TV.", "Versión del sistema y versión de AlphaX.", "ID del dispositivo mostrado en la app.", "Texto exacto del error, si existe."],
-          stepsTitle: "Revisiones rápidas",
-          stepOneTitle: "1. Reinicia la app",
-          stepOneText: "Cierra AlphaX y ábrelo de nuevo para limpiar un intento atascado.",
-          stepTwoTitle: "2. Prueba la red",
-          stepTwoText: "Si la lista no carga, prueba otra conexión o reinicia el Wi-Fi.",
-          stepThreeTitle: "3. Confirma la activación",
-          stepThreeText: "Verifica que el ID usado en la activación sea el mismo que aparece en la app.",
-          cardOneTitle: "Prueba gratis",
-          cardOneText: "AlphaX se puede probar durante 7 días antes de la activación permanente.",
-          cardTwoTitle: "Activación única",
-          cardTwoText: "Después de la prueba, una tarifa libera el acceso permanente a la app.",
-          cardThreeTitle: "Privacidad",
-          cardThreeText: "Envía solo los datos necesarios: dispositivo, versión, ID y error.",
-          footerText: "Soporte AlphaX.",
-          privacyLink: "Política de Privacidad"
-        }
-      };
-
-      const buttons = document.querySelectorAll("[data-lang-button]");
-
-      function getPreferredLanguage() {
-        const saved = localStorage.getItem("alphax-language");
-        if (saved && translations[saved]) return saved;
-        const browserLang = (navigator.language || "pt-BR").toLowerCase();
-        if (browserLang.startsWith("en")) return "en";
-        if (browserLang.startsWith("es")) return "es";
-        return "pt-BR";
-      }
-
-      function renderList(node, items) {
-        node.innerHTML = "";
-        items.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          node.appendChild(li);
-        });
-      }
-
-      function setLanguage(lang) {
-        const copy = translations[lang] || translations["pt-BR"];
-        document.documentElement.lang = lang;
-        document.title = lang === "en" ? "AlphaX | Support" : lang === "es" ? "AlphaX | Soporte" : "AlphaX | Suporte";
-        document.querySelectorAll("[data-i18n]").forEach((node) => {
-          node.textContent = copy[node.dataset.i18n] || "";
-        });
-        document.querySelectorAll("[data-i18n-list]").forEach((node) => {
-          renderList(node, copy[node.dataset.i18nList] || []);
-        });
-        buttons.forEach((button) => {
-          button.setAttribute("aria-pressed", String(button.dataset.langButton === lang));
-        });
-        localStorage.setItem("alphax-language", lang);
-      }
-
-      buttons.forEach((button) => {
-        button.addEventListener("click", () => setLanguage(button.dataset.langButton));
-      });
-
-      setLanguage(getPreferredLanguage());
-    </script>
+    <script src="../assets/site.js"></script>
   </body>
 </html>

@@ -3,12 +3,105 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AlphaX | Redirecionando</title>
-    <meta http-equiv="refresh" content="0; url=../support/">
-    <meta name="robots" content="noindex, nofollow">
-    <script>window.location.replace("../support/");</script>
+    <title>AlphaX | Suporte</title>
+    <meta name="description" content="Suporte AlphaX com informações para ativação, teste grátis, conexão, ID do dispositivo e erros do aplicativo.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080a0f">
+    <link rel="icon" href="../logo-256.png">
+    <link rel="stylesheet" href="../assets/site.css">
   </head>
-  <body>
-    <p>Redirecionando para <a href="../support/">suporte</a>...</p>
+  <body data-page="support">
+    <header class="site-header">
+      <div class="shell topbar">
+        <a class="brand" href="../" aria-label="AlphaX">
+          <img src="../logo-256.png" alt="AlphaX">
+          <span>
+            <strong>AlphaX</strong>
+            <span data-i18n="brandTag">IPTV Player</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Navegação">
+          <a href="../" data-i18n="navHome">Início</a>
+          <a href="#ajuda" data-i18n="navHelp">Ajuda</a>
+          <a href="../privacy/" data-i18n="navPrivacy">Privacidade</a>
+          <div class="language" aria-label="Selecionar idioma">
+            <button type="button" data-lang-button="pt-BR" aria-pressed="true">PT</button>
+            <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
+            <button type="button" data-lang-button="es" aria-pressed="false">ES</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero compact" aria-labelledby="support-title">
+        <article class="panel hero-copy">
+          <span class="eyebrow" data-i18n="supportEyebrow">Central de suporte</span>
+          <h1 id="support-title" class="page-title" data-i18n="supportH1">Ajuda rápida para continuar assistindo.</h1>
+          <p class="lead" data-i18n="supportLead">Envie as informações certas sobre ativação, conexão, lista IPTV ou erro exibido no app. Isso reduz idas e voltas no atendimento.</p>
+          <div class="actions">
+            <a class="button primary" href="mailto:alphaxapp@gmail.com" data-i18n="emailButton">Enviar e-mail</a>
+            <a class="button secondary" href="../" data-i18n="backButton">Voltar ao site</a>
+          </div>
+        </article>
+
+        <aside class="panel side-panel">
+          <h2 data-i18n="sendTitle">Inclua no contato</h2>
+          <ul class="list" data-i18n-list="sendList">
+            <li>Modelo do aparelho: iPhone, iPad ou Apple TV.</li>
+            <li>Versão do iOS, iPadOS ou tvOS.</li>
+            <li>ID do dispositivo exibido no AlphaX.</li>
+            <li>Texto exato da mensagem de erro, se houver.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="ajuda" class="section" aria-labelledby="checks-title">
+        <div class="section-header">
+          <h2 id="checks-title" data-i18n="checksTitle">Verificações antes de chamar</h2>
+        </div>
+        <div class="grid">
+          <article class="card blue">
+            <h3 data-i18n="checkOneTitle">Reinicie o app</h3>
+            <p data-i18n="checkOneText">Feche o AlphaX e abra novamente para limpar uma tentativa travada.</p>
+          </article>
+          <article class="card green">
+            <h3 data-i18n="checkTwoTitle">Teste a internet</h3>
+            <p data-i18n="checkTwoText">Se a lista não carregar, tente outra rede ou reinicie o Wi-Fi.</p>
+          </article>
+          <article class="card red">
+            <h3 data-i18n="checkThreeTitle">Confirme o ID</h3>
+            <p data-i18n="checkThreeText">A ativação precisa usar o mesmo ID exibido no aparelho.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="support-info-title">
+        <div class="section-header">
+          <h2 id="support-info-title" data-i18n="supportCardsTitle">Informações importantes</h2>
+        </div>
+        <div class="grid">
+          <article class="card accent">
+            <h3 data-i18n="cardTrialTitle">Teste grátis</h3>
+            <p data-i18n="cardTrialText">O AlphaX pode ser testado por 7 dias antes da ativação permanente.</p>
+          </article>
+          <article class="card blue">
+            <h3 data-i18n="cardActivationTitle">Ativação única</h3>
+            <p data-i18n="cardActivationText">Depois do teste, uma taxa única libera o acesso permanente ao aplicativo.</p>
+          </article>
+          <article class="card green">
+            <h3 data-i18n="cardPrivacyTitle">Privacidade</h3>
+            <p data-i18n="cardPrivacyText">Envie apenas dados necessários para suporte: aparelho, versão, ID e erro.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p data-i18n="footerSupport">AlphaX suporte.</p>
+        <p><a href="../privacy/" data-i18n="privacyLink">Política de Privacidade</a></p>
+      </footer>
+    </main>
+
+    <script src="../assets/site.js"></script>
   </body>
 </html>
