@@ -3,22 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AlphaX | Smart IPTV Player</title>
-    <meta name="description" content="AlphaX landing page with multilingual presentation, 7-day free trial, and permanent activation.">
+    <title>AlphaX | IPTV Player simples e rápido</title>
+    <meta name="description" content="Conheça o AlphaX: player IPTV com teste gratuito de 7 dias, ativação permanente e suporte direto para iPhone, iPad e Apple TV.">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#090b13">
+    <meta property="og:title" content="AlphaX | IPTV Player">
+    <meta property="og:description" content="Teste grátis por 7 dias e ative o AlphaX de forma permanente com suporte direto.">
+    <meta property="og:image" content="logo.png">
     <link rel="icon" href="logo.png">
     <style>
       :root {
         color-scheme: dark;
-        --bg: #070815;
-        --panel: rgba(16, 18, 36, 0.82);
-        --panel-strong: rgba(23, 26, 49, 0.95);
-        --text: #f5f7ff;
-        --muted: #b8bdd4;
+        --bg: #090b13;
+        --surface: rgba(18, 22, 32, 0.88);
+        --surface-strong: rgba(23, 29, 43, 0.96);
+        --text: #f7f8fc;
+        --muted: #b9c0d0;
         --line: rgba(255, 255, 255, 0.12);
-        --accent: #f5b63e;
-        --accent-2: #7f8cff;
-        --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+        --gold: #f3b94d;
+        --blue: #5f8cff;
+        --green: #5dd39e;
+        --shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
         font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
 
@@ -29,9 +34,8 @@
         min-height: 100vh;
         color: var(--text);
         background:
-          radial-gradient(circle at top left, rgba(127, 140, 255, 0.18), transparent 30rem),
-          radial-gradient(circle at 80% 0%, rgba(245, 182, 62, 0.14), transparent 22rem),
-          linear-gradient(145deg, #070815 0%, #101326 48%, #14101f 100%);
+          linear-gradient(135deg, rgba(95, 140, 255, 0.14), transparent 34%),
+          linear-gradient(180deg, #090b13 0%, #111827 56%, #090b13 100%);
       }
 
       a { color: inherit; }
@@ -44,23 +48,29 @@
       .topbar {
         position: sticky;
         top: 0;
-        z-index: 3;
-        backdrop-filter: blur(18px);
-        background: rgba(7, 8, 21, 0.7);
+        z-index: 5;
         border-bottom: 1px solid var(--line);
+        background: rgba(9, 11, 19, 0.82);
+        backdrop-filter: blur(18px);
       }
 
       .topbar-inner {
-        min-height: 76px;
+        min-height: 72px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 16px;
+        gap: 18px;
+      }
+
+      .brand,
+      .nav,
+      .lang-switch,
+      .actions {
+        display: flex;
+        align-items: center;
       }
 
       .brand {
-        display: flex;
-        align-items: center;
         gap: 12px;
         text-decoration: none;
       }
@@ -68,40 +78,26 @@
       .brand img {
         width: 44px;
         height: 44px;
-        border-radius: 12px;
+        border-radius: 8px;
       }
 
       .brand strong { display: block; font-size: 18px; }
-      .brand span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+      .brand span span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
 
-      .nav {
-        display: flex;
+      .nav,
+      .lang-switch,
+      .actions {
         flex-wrap: wrap;
         gap: 10px;
       }
 
-      .lang-switch {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
+      .nav a,
+      .button,
       .lang-switch button {
-        appearance: none;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--text);
-        min-height: 40px;
-        padding: 0 12px;
-        border-radius: 999px;
+        min-height: 42px;
+        border-radius: 8px;
         font: inherit;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
-      .lang-switch button[aria-pressed="true"] {
-        border-color: rgba(245, 182, 62, 0.7);
-        background: rgba(245, 182, 62, 0.15);
+        font-weight: 750;
       }
 
       .nav a,
@@ -109,62 +105,70 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-height: 46px;
-        padding: 0 18px;
-        border-radius: 12px;
+        padding: 0 16px;
         text-decoration: none;
-        font-weight: 700;
       }
 
-      .nav a {
+      .nav a,
+      .button.secondary,
+      .lang-switch button {
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.04);
+        background: rgba(255, 255, 255, 0.045);
+        color: var(--text);
+      }
+
+      .lang-switch button {
+        cursor: pointer;
+        padding: 0 12px;
+      }
+
+      .lang-switch button[aria-pressed="true"] {
+        border-color: rgba(243, 185, 77, 0.78);
+        background: rgba(243, 185, 77, 0.14);
       }
 
       .button.primary {
-        background: linear-gradient(135deg, var(--accent), #ffcc66);
-        color: #221705;
+        border: 0;
+        background: linear-gradient(135deg, var(--gold), #ffd978);
+        color: #211504;
       }
 
-      main { padding: 56px 0 44px; }
+      main { padding: 50px 0 40px; }
 
       .hero {
         display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(290px, 0.8fr);
+        grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
         gap: 22px;
         align-items: stretch;
       }
 
-      .hero-card,
-      .info-card,
-      .support-card {
+      .panel,
+      .card,
+      .metric {
         border: 1px solid var(--line);
-        border-radius: 20px;
-        background: var(--panel);
+        border-radius: 8px;
+        background: var(--surface);
         box-shadow: var(--shadow);
       }
 
-      .hero-card {
-        padding: 34px;
+      .hero-copy {
+        padding: clamp(26px, 4vw, 42px);
       }
 
       .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--accent);
+        color: var(--gold);
         font-size: 13px;
-        font-weight: 800;
+        font-weight: 850;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
+        letter-spacing: 0.08em;
       }
 
       h1 {
-        margin: 14px 0 14px;
-        max-width: 12ch;
-        font-size: clamp(42px, 7vw, 78px);
-        line-height: 0.94;
-        letter-spacing: -0.03em;
+        max-width: 11ch;
+        margin: 14px 0 16px;
+        font-size: clamp(42px, 7vw, 76px);
+        line-height: 0.96;
+        letter-spacing: 0;
       }
 
       .lead {
@@ -175,25 +179,21 @@
         line-height: 1.7;
       }
 
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 26px;
-      }
+      .actions { margin-top: 26px; }
 
-      .info-card {
+      .side {
         padding: 24px;
-        background: var(--panel-strong);
+        background: var(--surface-strong);
       }
 
-      .info-card h2,
-      .support-card h2 {
-        margin: 0 0 12px;
+      .side h2,
+      .section h2 {
+        margin: 0 0 14px;
         font-size: 22px;
       }
 
-      .checklist {
+      .checklist,
+      .steps {
         display: grid;
         gap: 12px;
         margin: 0;
@@ -201,85 +201,100 @@
         list-style: none;
       }
 
-      .checklist li {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
+      .checklist li,
+      .steps li {
+        padding: 13px 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.04);
         color: var(--muted);
         line-height: 1.55;
       }
 
-      .checklist li::before {
-        content: "";
-        width: 10px;
-        height: 10px;
-        margin-top: 7px;
-        border-radius: 50%;
-        background: var(--accent-2);
-        box-shadow: 0 0 0 7px rgba(127, 140, 255, 0.12);
-        flex: 0 0 auto;
+      .price-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
       }
+
+      .metric {
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.045);
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--green);
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+
+      .metric span {
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .section { margin-top: 26px; }
 
       .grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
-        margin-top: 22px;
       }
 
-      .support-card {
+      .card {
         padding: 22px;
+        background: rgba(255, 255, 255, 0.045);
       }
 
-      .support-card h3 {
+      .card h3 {
         margin: 0 0 8px;
         font-size: 18px;
       }
 
-      .support-card p {
+      .card p {
         margin: 0;
         color: var(--muted);
         line-height: 1.6;
       }
 
-      .pricing {
-        margin-top: 18px;
-        display: grid;
-        gap: 12px;
-      }
-
-      .pricing-item {
-        border: 1px solid var(--line);
-        border-radius: 14px;
-        padding: 14px 16px;
-        background: rgba(255, 255, 255, 0.04);
-      }
-
-      .pricing-item strong {
-        display: block;
-        margin-bottom: 4px;
-      }
-
-      [data-i18n],
-      [data-i18n-list] {
-        transition: opacity 120ms ease;
-      }
-
       .footer {
-        margin-top: 44px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 42px;
         padding-top: 22px;
         border-top: 1px solid var(--line);
         color: var(--muted);
       }
 
-      @media (max-width: 860px) {
+      .footer p { margin: 0; }
+
+      @media (max-width: 880px) {
         .topbar-inner,
         .hero,
-        .grid { grid-template-columns: 1fr; }
+        .grid,
+        .price-row {
+          grid-template-columns: 1fr;
+        }
 
-        .topbar-inner { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+        .topbar-inner {
+          display: grid;
+          padding: 14px 0;
+        }
+
         main { padding-top: 32px; }
-        .hero-card { padding: 26px; }
+      }
+
+      @media (max-width: 520px) {
+        .shell { width: min(100% - 24px, 1120px); }
+        .nav a,
+        .button { width: 100%; }
+        .nav,
+        .actions { align-items: stretch; }
+        h1 { font-size: clamp(38px, 13vw, 54px); }
       }
     </style>
   </head>
@@ -290,13 +305,13 @@
           <img src="logo.png" alt="AlphaX">
           <span>
             <strong>AlphaX</strong>
-            <span>Site de suporte</span>
+            <span data-i18n="brandTag">IPTV Player</span>
           </span>
         </a>
-        <nav class="nav" aria-label="Navigation">
+        <nav class="nav" aria-label="Navegação">
           <a href="#recursos" data-i18n="navFeatures">Recursos</a>
           <a href="support/" data-i18n="navSupport">Suporte</a>
-          <div class="lang-switch" aria-label="Language switcher">
+          <div class="lang-switch" aria-label="Selecionar idioma">
             <button type="button" data-lang-button="pt-BR" aria-pressed="true">PT</button>
             <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
             <button type="button" data-lang-button="es" aria-pressed="false">ES</button>
@@ -307,140 +322,156 @@
 
     <main class="shell">
       <section class="hero" aria-labelledby="title">
-        <article class="hero-card">
-          <div class="eyebrow" data-i18n="eyebrow">Plataforma oficial</div>
+        <article class="panel hero-copy">
+          <div class="eyebrow" data-i18n="eyebrow">Site oficial</div>
           <h1 id="title" data-i18n="title">AlphaX sem complicação</h1>
-          <p class="lead" data-i18n="lead">
-            Uma landing comercial para AlphaX com teste gratuito de 7 dias, ativação permanente e acesso rápido ao suporte.
-          </p>
+          <p class="lead" data-i18n="lead">Assista suas listas IPTV em uma experiência simples, com teste grátis por 7 dias, ativação permanente e suporte direto quando precisar.</p>
           <div class="actions">
-            <a class="button primary" href="support/" data-i18n="supportButton">Abrir suporte</a>
-            <a class="button" href="#recursos" data-i18n="featuresButton">Ver recursos</a>
+            <a class="button primary" href="support/" data-i18n="supportButton">Falar com suporte</a>
+            <a class="button secondary" href="#recursos" data-i18n="featuresButton">Ver benefícios</a>
           </div>
         </article>
 
-        <aside class="info-card" aria-labelledby="quick-title">
-          <h2 id="quick-title" data-i18n="beforeTitle">Antes de chamar</h2>
+        <aside class="panel side" aria-labelledby="quick-title">
+          <h2 id="quick-title" data-i18n="beforeTitle">Antes de começar</h2>
           <ul class="checklist" data-i18n-list="beforeList"></ul>
-            <div class="pricing" aria-label="Pricing info">
-            <div class="pricing-item">
-              <strong data-i18n="trialTitle">7 dias de uso gratuito</strong>
-              <span data-i18n="trialText">Teste o AlphaX por 7 dias grátis antes de escolher o plano.</span>
+          <div class="price-row" aria-label="Informações comerciais">
+            <div class="metric">
+              <strong data-i18n="trialTitle">7 dias</strong>
+              <span data-i18n="trialText">Teste gratuito antes de decidir pela ativação.</span>
             </div>
-            <div class="pricing-item">
-              <strong data-i18n="activationTitle">Taxa de ativação permanente</strong>
-              <span data-i18n="activationText">Depois do período gratuito, uma taxa única libera o acesso permanente.</span>
+            <div class="metric">
+              <strong data-i18n="activationTitle">1 taxa</strong>
+              <span data-i18n="activationText">Pagamento único para liberar acesso permanente.</span>
             </div>
           </div>
         </aside>
       </section>
 
-      <section id="recursos" style="margin-top: 28px;">
+      <section id="recursos" class="section" aria-labelledby="features-title">
+        <h2 id="features-title" data-i18n="featuresTitle">O que melhora no uso</h2>
         <div class="grid">
-          <article class="support-card">
-            <h3 data-i18n="featureOneTitle">Mensagem de teste</h3>
-            <p data-i18n="featureOneText">Destaca a prova gratuita de 7 dias antes de qualquer cobrança.</p>
+          <article class="card">
+            <h3 data-i18n="featureOneTitle">Teste sem pressa</h3>
+            <p data-i18n="featureOneText">Use por 7 dias para validar sua lista, sua internet e seus aparelhos antes de ativar.</p>
           </article>
-          <article class="support-card">
-            <h3 data-i18n="featureTwoTitle">Desbloqueio permanente</h3>
-            <p data-i18n="featureTwoText">Explica a taxa única para acesso permanente após o teste.</p>
+          <article class="card">
+            <h3 data-i18n="featureTwoTitle">Ativação permanente</h3>
+            <p data-i18n="featureTwoText">Depois do teste, a taxa única libera o AlphaX sem mensalidade do aplicativo.</p>
           </article>
-          <article class="support-card">
-            <h3 data-i18n="featureThreeTitle">Idiomas do navegador</h3>
-            <p data-i18n="featureThreeText">O idioma padrão segue o navegador do visitante, com PT, EN e ES disponíveis.</p>
+          <article class="card">
+            <h3 data-i18n="featureThreeTitle">Ajuda objetiva</h3>
+            <p data-i18n="featureThreeText">A página de suporte mostra exatamente quais dados enviar para resolver mais rápido.</p>
           </article>
         </div>
       </section>
 
+      <section class="section panel side" aria-labelledby="steps-title">
+        <h2 id="steps-title" data-i18n="stepsTitle">Como pedir suporte</h2>
+        <ol class="steps" data-i18n-list="stepsList"></ol>
+      </section>
+
       <footer class="footer">
-        <p data-i18n="footerText">AlphaX. Landing comercial e site de suporte.</p>
-        <p><a href="/alphax-app/privacy/">Política de Privacidade</a></p>
+        <p data-i18n="footerText">AlphaX. Site comercial e central de suporte.</p>
+        <p><a href="privacy/" data-i18n="privacyLink">Política de Privacidade</a></p>
       </footer>
     </main>
 
     <script>
       const translations = {
         "pt-BR": {
+          brandTag: "IPTV Player",
           navFeatures: "Recursos",
           navSupport: "Suporte",
-          eyebrow: "Plataforma oficial",
+          eyebrow: "Site oficial",
           title: "AlphaX sem complicação",
-          lead: "Uma landing comercial para AlphaX com teste gratuito de 7 dias, ativação permanente e acesso rápido ao suporte.",
-          supportButton: "Abrir suporte",
-          featuresButton: "Ver recursos",
-          beforeTitle: "Antes de chamar",
-          beforeList: [
-            "Atualize o app e teste novamente.",
-            "Confira a internet e tente outra rede.",
-            "Separe o ID do dispositivo e a mensagem de erro."
-          ],
-          trialTitle: "7 dias de uso gratuito",
-          trialText: "Teste o AlphaX por 7 dias grátis antes de escolher o plano.",
-          activationTitle: "Taxa de ativação permanente",
-          activationText: "Depois do período gratuito, uma taxa única libera o acesso permanente.",
-          featureOneTitle: "Mensagem de teste",
-          featureOneText: "Destaca a prova gratuita de 7 dias antes de qualquer cobrança.",
-          featureTwoTitle: "Desbloqueio permanente",
-          featureTwoText: "Explica a taxa única para acesso permanente após o teste.",
-          featureThreeTitle: "Idiomas do navegador",
-          featureThreeText: "O idioma padrão segue o navegador do visitante, com PT, EN e ES disponíveis.",
-          footerText: "AlphaX. Landing comercial e site de suporte."
+          lead: "Assista suas listas IPTV em uma experiência simples, com teste grátis por 7 dias, ativação permanente e suporte direto quando precisar.",
+          supportButton: "Falar com suporte",
+          featuresButton: "Ver benefícios",
+          beforeTitle: "Antes de começar",
+          beforeList: ["Instale ou atualize o app AlphaX.", "Teste sua lista IPTV durante o período gratuito.", "Guarde o ID do dispositivo para ativação e suporte."],
+          trialTitle: "7 dias",
+          trialText: "Teste gratuito antes de decidir pela ativação.",
+          activationTitle: "1 taxa",
+          activationText: "Pagamento único para liberar acesso permanente.",
+          featuresTitle: "O que melhora no uso",
+          featureOneTitle: "Teste sem pressa",
+          featureOneText: "Use por 7 dias para validar sua lista, sua internet e seus aparelhos antes de ativar.",
+          featureTwoTitle: "Ativação permanente",
+          featureTwoText: "Depois do teste, a taxa única libera o AlphaX sem mensalidade do aplicativo.",
+          featureThreeTitle: "Ajuda objetiva",
+          featureThreeText: "A página de suporte mostra exatamente quais dados enviar para resolver mais rápido.",
+          stepsTitle: "Como pedir suporte",
+          stepsList: ["Abra a página de suporte.", "Informe modelo do aparelho, versão do sistema e ID do dispositivo.", "Descreva o erro com o texto que aparece na tela."],
+          footerText: "AlphaX. Site comercial e central de suporte.",
+          privacyLink: "Política de Privacidade"
         },
         en: {
+          brandTag: "IPTV Player",
           navFeatures: "Features",
           navSupport: "Support",
-          eyebrow: "Official platform",
+          eyebrow: "Official site",
           title: "AlphaX made simple",
-          lead: "A commercial AlphaX landing page with a 7-day free trial, permanent activation, and fast support access.",
-          supportButton: "Open support",
-          featuresButton: "See features",
-          beforeTitle: "Before contacting",
-          beforeList: [
-            "Update the app and try again.",
-            "Check your connection and try another network.",
-            "Keep your device ID and error message handy."
-          ],
-          trialTitle: "7-day free trial",
-          trialText: "Try AlphaX free for 7 days before choosing a plan.",
-          activationTitle: "Permanent activation fee",
-          activationText: "After the free period, a one-time fee unlocks permanent access.",
-          featureOneTitle: "Trial-first message",
-          featureOneText: "Highlights the 7-day free trial before any payment discussion.",
-          featureTwoTitle: "Permanent unlock",
-          featureTwoText: "Explains the one-time activation fee for ongoing access.",
-          featureThreeTitle: "Browser languages",
-          featureThreeText: "Default language follows the visitor browser, with PT, EN, and ES available.",
-          footerText: "AlphaX. Commercial landing and support website."
+          lead: "Watch your IPTV playlists in a clean experience with a 7-day free trial, permanent activation, and direct support when you need it.",
+          supportButton: "Contact support",
+          featuresButton: "See benefits",
+          beforeTitle: "Before you start",
+          beforeList: ["Install or update the AlphaX app.", "Test your IPTV playlist during the free period.", "Keep your device ID for activation and support."],
+          trialTitle: "7 days",
+          trialText: "Free trial before choosing activation.",
+          activationTitle: "1 fee",
+          activationText: "One-time payment to unlock permanent access.",
+          featuresTitle: "What improves your use",
+          featureOneTitle: "Trial without pressure",
+          featureOneText: "Use 7 days to validate your playlist, internet, and devices before activation.",
+          featureTwoTitle: "Permanent activation",
+          featureTwoText: "After the trial, the one-time fee unlocks AlphaX with no app monthly fee.",
+          featureThreeTitle: "Clear help",
+          featureThreeText: "The support page shows exactly what to send so issues can be solved faster.",
+          stepsTitle: "How to request support",
+          stepsList: ["Open the support page.", "Send device model, system version, and device ID.", "Describe the issue with the exact text shown on screen."],
+          footerText: "AlphaX. Commercial site and support center.",
+          privacyLink: "Privacy Policy"
         },
         es: {
+          brandTag: "IPTV Player",
           navFeatures: "Recursos",
           navSupport: "Soporte",
-          eyebrow: "Plataforma oficial",
+          eyebrow: "Sitio oficial",
           title: "AlphaX sin complicación",
-          lead: "Una landing comercial para AlphaX con prueba gratuita de 7 días, activación permanente y acceso rápido al soporte.",
-          supportButton: "Abrir soporte",
-          featuresButton: "Ver recursos",
-          beforeTitle: "Antes de contactar",
-          beforeList: [
-            "Actualiza la app y prueba de nuevo.",
-            "Revisa tu conexión y prueba otra red.",
-            "Ten a mano el ID del dispositivo y el mensaje de error."
-          ],
-          trialTitle: "7 días de uso gratuito",
-          trialText: "Prueba AlphaX gratis durante 7 días antes de elegir un plan.",
-          activationTitle: "Tarifa de activación permanente",
-          activationText: "Después del período gratuito, una tarifa única desbloquea el acceso permanente.",
-          featureOneTitle: "Mensaje de prueba",
-          featureOneText: "Destaca la prueba gratuita de 7 días antes de cualquier cobro.",
-          featureTwoTitle: "Desbloqueo permanente",
-          featureTwoText: "Explica la tarifa única para acceso permanente después de la prueba.",
-          featureThreeTitle: "Idiomas del navegador",
-          featureThreeText: "El idioma predeterminado sigue el navegador del visitante, con PT, EN y ES disponibles.",
-          footerText: "AlphaX. Landing comercial y sitio de soporte."
+          lead: "Mira tus listas IPTV en una experiencia simple, con prueba gratis por 7 días, activación permanente y soporte directo cuando lo necesites.",
+          supportButton: "Contactar soporte",
+          featuresButton: "Ver beneficios",
+          beforeTitle: "Antes de empezar",
+          beforeList: ["Instala o actualiza la app AlphaX.", "Prueba tu lista IPTV durante el período gratuito.", "Guarda el ID del dispositivo para activación y soporte."],
+          trialTitle: "7 días",
+          trialText: "Prueba gratuita antes de decidir la activación.",
+          activationTitle: "1 tarifa",
+          activationText: "Pago único para liberar acceso permanente.",
+          featuresTitle: "Qué mejora en el uso",
+          featureOneTitle: "Prueba sin presión",
+          featureOneText: "Usa 7 días para validar tu lista, internet y dispositivos antes de activar.",
+          featureTwoTitle: "Activación permanente",
+          featureTwoText: "Después de la prueba, la tarifa única libera AlphaX sin mensualidad de la app.",
+          featureThreeTitle: "Ayuda clara",
+          featureThreeText: "La página de soporte muestra exactamente qué enviar para resolver más rápido.",
+          stepsTitle: "Cómo pedir soporte",
+          stepsList: ["Abre la página de soporte.", "Envía modelo del dispositivo, versión del sistema e ID del dispositivo.", "Describe el error con el texto exacto que aparece en pantalla."],
+          footerText: "AlphaX. Sitio comercial y centro de soporte.",
+          privacyLink: "Política de Privacidad"
         }
       };
 
       const buttons = document.querySelectorAll("[data-lang-button]");
+
+      function getPreferredLanguage() {
+        const saved = localStorage.getItem("alphax-language");
+        if (saved && translations[saved]) return saved;
+        const browserLang = (navigator.language || "pt-BR").toLowerCase();
+        if (browserLang.startsWith("en")) return "en";
+        if (browserLang.startsWith("es")) return "es";
+        return "pt-BR";
+      }
 
       function renderList(node, items) {
         node.innerHTML = "";
@@ -454,6 +485,7 @@
       function setLanguage(lang) {
         const copy = translations[lang] || translations["pt-BR"];
         document.documentElement.lang = lang;
+        document.title = lang === "en" ? "AlphaX | Simple IPTV Player" : lang === "es" ? "AlphaX | IPTV Player simple" : "AlphaX | IPTV Player simples e rápido";
         document.querySelectorAll("[data-i18n]").forEach((node) => {
           node.textContent = copy[node.dataset.i18n] || "";
         });
@@ -463,15 +495,14 @@
         buttons.forEach((button) => {
           button.setAttribute("aria-pressed", String(button.dataset.langButton === lang));
         });
+        localStorage.setItem("alphax-language", lang);
       }
 
       buttons.forEach((button) => {
         button.addEventListener("click", () => setLanguage(button.dataset.langButton));
       });
 
-      const browserLang = navigator.language?.toLowerCase() || "pt-br";
-      const preferred = browserLang.startsWith("es") ? "es" : browserLang.startsWith("en") ? "en" : "pt-BR";
-      setLanguage(preferred);
+      setLanguage(getPreferredLanguage());
     </script>
   </body>
 </html>
