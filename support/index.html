@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AlphaX | Support</title>
+    <meta name="description" content="AlphaX support page with multilingual guidance, free trial, and permanent activation information.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="../logo.png">
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #080916;
+        --panel: rgba(17, 20, 39, 0.88);
+        --panel-2: rgba(23, 26, 48, 0.96);
+        --text: #f5f7ff;
+        --muted: #bcc2d9;
+        --line: rgba(255, 255, 255, 0.12);
+        --accent: #f5b63e;
+        --accent-2: #7f8cff;
+        --danger: #ff6b6b;
+        --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top right, rgba(127, 140, 255, 0.16), transparent 28rem),
+          linear-gradient(145deg, #080916 0%, #111427 52%, #0d1120 100%);
+      }
+
+      a { color: inherit; }
+
+      .shell {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        backdrop-filter: blur(18px);
+        background: rgba(8, 9, 22, 0.72);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .topbar {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+      }
+
+      .brand strong { display: block; font-size: 18px; }
+      .brand span { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .lang-switch {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .lang-switch button {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        min-height: 40px;
+        padding: 0 12px;
+        border-radius: 999px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .lang-switch button[aria-pressed="true"] {
+        border-color: rgba(245, 182, 62, 0.7);
+        background: rgba(245, 182, 62, 0.15);
+      }
+
+      .links a,
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .links a {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      main { padding: 52px 0 44px; }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        gap: 20px;
+        align-items: start;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-copy { padding: 34px; }
+      .side { padding: 24px; background: var(--panel-2); }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      h1 {
+        margin: 14px 0 14px;
+        font-size: clamp(40px, 7vw, 72px);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--accent), #ffcc66);
+        color: #201603;
+      }
+
+      .button.secondary {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .section {
+        margin-top: 22px;
+        padding: 24px;
+      }
+
+      .section h2 {
+        margin: 0 0 14px;
+        font-size: 22px;
+      }
+
+      .list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .list li {
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .list strong { color: var(--text); }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 22px;
+      }
+
+      .card {
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .note {
+        border-left: 4px solid var(--accent-2);
+      }
+
+      .warning {
+        border-left: 4px solid var(--danger);
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .pricing {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .pricing-item {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 14px 16px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .pricing-item strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      [data-i18n],
+      [data-i18n-list] {
+        transition: opacity 120ms ease;
+      }
+
+      @media (max-width: 860px) {
+        .topbar,
+        .hero,
+        .grid { grid-template-columns: 1fr; }
+        .topbar { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+        main { padding-top: 32px; }
+        .hero-copy, .side { padding: 26px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell topbar">
+        <a class="brand" href="../" aria-label="AlphaX">
+          <img src="../logo.png" alt="AlphaX">
+          <span>
+            <strong>AlphaX</strong>
+            <span>Suporte</span>
+          </span>
+        </a>
+        <nav class="links" aria-label="Navigation">
+          <a href="../" data-i18n="navHome">Home</a>
+          <a href="#ajuda" data-i18n="navHelp">Help</a>
+          <div class="lang-switch" aria-label="Language switcher">
+            <button type="button" data-lang-button="pt-BR" aria-pressed="true">PT</button>
+            <button type="button" data-lang-button="en" aria-pressed="false">EN</button>
+            <button type="button" data-lang-button="es" aria-pressed="false">ES</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero" aria-labelledby="support-title">
+        <article class="panel hero-copy">
+          <div class="eyebrow" data-i18n="eyebrow">Central de suporte</div>
+          <h1 id="support-title" data-i18n="title">Como ajudar rápido</h1>
+          <p class="lead" data-i18n="lead">
+            Abra esta página quando precisar de orientação. Ela resume as ações básicas, o teste gratuito de 7 dias e a ativação permanente.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="https://github.com/johnlen7/alphax-ios/issues/new" target="_blank" rel="noreferrer" data-i18n="ticketButton">Abrir chamado</a>
+            <a class="button secondary" href="../" data-i18n="backButton">Voltar à apresentação</a>
+          </div>
+        </article>
+
+        <aside class="panel side">
+          <h2 data-i18n="sendTitle">Envie junto</h2>
+          <ul class="list" data-i18n-list="sendList"></ul>
+          <div class="pricing">
+            <div class="pricing-item">
+              <strong data-i18n="trialTitle">7 dias de uso gratuito</strong>
+              <span data-i18n="trialText">Teste o AlphaX por 7 dias grátis antes de escolher o plano.</span>
+            </div>
+            <div class="pricing-item">
+              <strong data-i18n="activationTitle">Taxa de ativação permanente</strong>
+              <span data-i18n="activationText">Depois do período gratuito, uma taxa única libera o acesso permanente.</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="ajuda" class="panel section">
+        <h2 data-i18n="stepsTitle">Passos rápidos</h2>
+        <div class="grid">
+          <article class="card note">
+            <h3 data-i18n="stepOneTitle">1. Reinicie o app</h3>
+            <p data-i18n="stepOneText">Feche o AlphaX e abra novamente para limpar uma tentativa travada.</p>
+          </article>
+          <article class="card note">
+            <h3 data-i18n="stepTwoTitle">2. Teste a rede</h3>
+            <p data-i18n="stepTwoText">Se algo não carregar, tente outra internet ou desligue e ligue o Wi-Fi.</p>
+          </article>
+          <article class="card warning">
+            <h3 data-i18n="stepThreeTitle">3. Confirme o acesso</h3>
+            <p data-i18n="stepThreeText">Se houver ativação ou login, confira se os dados estão corretos e atualizados.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel section">
+        <h2 data-i18n="pageTitle">O que esta página faz</h2>
+        <div class="grid">
+          <article class="card">
+            <h3 data-i18n="pageOneTitle">Atendimento claro</h3>
+            <p data-i18n="pageOneText">Organiza as informações principais antes de abrir o contato.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="pageTwoTitle">Visual simples</h3>
+            <p data-i18n="pageTwoText">Estrutura leve, responsiva e fácil de manter dentro da pasta support.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="pageThreeTitle">Sem dependências</h3>
+            <p data-i18n="pageThreeText">Não usa framework externo nem scripts complexos.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p data-i18n="footerText">AlphaX suporte. Se quiser, também posso colocar e-mail ou formulário aqui.</p>
+        <p><a href="/alphax-app/privacy/">Política de Privacidade</a></p>
+      </footer>
+    </main>
+
+    <script>
+      const translations = {
+        "pt-BR": {
+          navHome: "Início",
+          navHelp: "Ajuda",
+          eyebrow: "Central de suporte",
+          title: "Como ajudar rápido",
+          lead: "Abra esta página quando precisar de orientação. Ela resume as ações básicas, o teste gratuito de 7 dias e a ativação permanente.",
+          ticketButton: "Abrir chamado",
+          backButton: "Voltar à apresentação",
+          sendTitle: "Envie junto",
+          sendList: [
+            "Modelo do aparelho: iPhone, iPad ou Apple TV e a versão do sistema.",
+            "ID do dispositivo que aparece no app ou em Ajustes.",
+            "Mensagem de erro, se possível com o texto exato exibido na tela."
+          ],
+          trialTitle: "7 dias de uso gratuito",
+          trialText: "Teste o AlphaX por 7 dias grátis antes de escolher o plano.",
+          activationTitle: "Taxa de ativação permanente",
+          activationText: "Depois do período gratuito, uma taxa única libera o acesso permanente.",
+          stepsTitle: "Passos rápidos",
+          stepOneTitle: "1. Reinicie o app",
+          stepOneText: "Feche o AlphaX e abra novamente para limpar uma tentativa travada.",
+          stepTwoTitle: "2. Teste a rede",
+          stepTwoText: "Se algo não carregar, tente outra internet ou desligue e ligue o Wi-Fi.",
+          stepThreeTitle: "3. Confirme o acesso",
+          stepThreeText: "Se houver ativação ou login, confira se os dados estão corretos e atualizados.",
+          pageTitle: "O que esta página faz",
+          pageOneTitle: "Atendimento claro",
+          pageOneText: "Organiza as informações principais antes de abrir o contato.",
+          pageTwoTitle: "Visual simples",
+          pageTwoText: "Estrutura leve, responsiva e fácil de manter dentro da pasta support.",
+          pageThreeTitle: "Sem dependências",
+          pageThreeText: "Não usa framework externo nem scripts complexos.",
+          footerText: "AlphaX suporte. Se quiser, eu também posso colocar e-mail ou formulário aqui."
+        },
+        en: {
+          navHome: "Home",
+          navHelp: "Help",
+          eyebrow: "Support center",
+          title: "How to help fast",
+          lead: "Open this page for quick guidance, the 7-day free trial, and the permanent activation information.",
+          ticketButton: "Open a ticket",
+          backButton: "Back to presentation",
+          sendTitle: "Send this too",
+          sendList: [
+            "Device model: iPhone, iPad, or Apple TV, plus the system version.",
+            "Device ID shown in the app or in Settings.",
+            "Error message, ideally the exact text shown on screen."
+          ],
+          trialTitle: "7-day free trial",
+          trialText: "Try AlphaX free for 7 days before choosing a plan.",
+          activationTitle: "Permanent activation fee",
+          activationText: "After the free period, a one-time fee unlocks permanent access.",
+          stepsTitle: "Quick steps",
+          stepOneTitle: "1. Restart the app",
+          stepOneText: "Close AlphaX and open it again to clear a stuck attempt.",
+          stepTwoTitle: "2. Test the network",
+          stepTwoText: "If something does not load, try another connection or toggle Wi-Fi off and on.",
+          stepThreeTitle: "3. Confirm access",
+          stepThreeText: "If activation or login is involved, make sure the information is correct and current.",
+          pageTitle: "What this page does",
+          pageOneTitle: "Clear support",
+          pageOneText: "Organizes the main details before opening contact.",
+          pageTwoTitle: "Simple layout",
+          pageTwoText: "Lightweight, responsive, and easy to maintain inside the support folder.",
+          pageThreeTitle: "No dependencies",
+          pageThreeText: "No external framework or complex scripts.",
+          footerText: "AlphaX support. I can also add e-mail or a form here if needed."
+        },
+        es: {
+          navHome: "Inicio",
+          navHelp: "Ayuda",
+          eyebrow: "Centro de soporte",
+          title: "Cómo ayudar rápido",
+          lead: "Abre esta página para orientación rápida, la prueba gratuita de 7 días y la información de activación permanente.",
+          ticketButton: "Abrir solicitud",
+          backButton: "Volver a la presentación",
+          sendTitle: "Envía esto también",
+          sendList: [
+            "Modelo del dispositivo: iPhone, iPad o Apple TV y la versión del sistema.",
+            "ID del dispositivo mostrado en la app o en Ajustes.",
+            "Mensaje de error, idealmente el texto exacto que aparece en pantalla."
+          ],
+          trialTitle: "7 días de uso gratuito",
+          trialText: "Prueba AlphaX gratis durante 7 días antes de elegir un plan.",
+          activationTitle: "Tarifa de activación permanente",
+          activationText: "Después del período gratuito, una tarifa única desbloquea el acceso permanente.",
+          stepsTitle: "Pasos rápidos",
+          stepOneTitle: "1. Reinicia la app",
+          stepOneText: "Cierra AlphaX y ábrelo de nuevo para limpiar un intento atascado.",
+          stepTwoTitle: "2. Prueba la red",
+          stepTwoText: "Si algo no carga, prueba otra conexión o apaga y enciende el Wi-Fi.",
+          stepThreeTitle: "3. Confirma el acceso",
+          stepThreeText: "Si hay activación o inicio de sesión, verifica que la información sea correcta y actual.",
+          pageTitle: "Qué hace esta página",
+          pageOneTitle: "Soporte claro",
+          pageOneText: "Organiza los detalles principales antes de abrir el contacto.",
+          pageTwoTitle: "Diseño simple",
+          pageTwoText: "Estructura ligera, adaptable y fácil de mantener dentro de la carpeta support.",
+          pageThreeTitle: "Sin dependencias",
+          pageThreeText: "No usa frameworks externos ni scripts complejos.",
+          footerText: "Soporte AlphaX. Si quieres, también puedo añadir correo o un formulario aquí."
+        }
+      };
+
+      const buttons = document.querySelectorAll("[data-lang-button]");
+
+      function renderList(node, items) {
+        node.innerHTML = "";
+        items.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          node.appendChild(li);
+        });
+      }
+
+      function setLanguage(lang) {
+        const copy = translations[lang] || translations["pt-BR"];
+        document.documentElement.lang = lang;
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          node.textContent = copy[node.dataset.i18n] || "";
+        });
+        document.querySelectorAll("[data-i18n-list]").forEach((node) => {
+          renderList(node, copy[node.dataset.i18nList] || []);
+        });
+        buttons.forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.langButton === lang));
+        });
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.langButton));
+      });
+
+      const browserLang = navigator.language?.toLowerCase() || "pt-br";
+      const preferred = browserLang.startsWith("es") ? "es" : browserLang.startsWith("en") ? "en" : "pt-BR";
+      setLanguage(preferred);
+    </script>
+  </body>
+</html>

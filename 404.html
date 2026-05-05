@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AlphaX | Redirect</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script>
+      (function () {
+        var path = window.location.pathname.replace(/\/+$/, "");
+        var hasProjectBase = path.indexOf("/alphax-app/") === 0;
+        var base = hasProjectBase ? "/alphax-app" : "";
+        var legacy = ["/suport", "/suporte", "/suport/suporte"];
+        var normalized = hasProjectBase ? path.replace("/alphax-app", "") : path;
+
+        if (legacy.indexOf(normalized) !== -1) {
+          window.location.replace(base + "/support/");
+          return;
+        }
+      })();
+    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #080914;
+        color: #f7f7fb;
+        font: 16px/1.5 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        padding: 24px;
+      }
+
+      a {
+        color: #f5b63e;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Página não encontrada. Acesse <a href="/alphax-app/support/">Support</a>.</p>
+  </body>
+</html>

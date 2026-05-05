@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AlphaX | Privacy Policy</title>
+    <meta name="description" content="AlphaX privacy policy with multilingual support and clear contact details.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="/alphax-app/logo.png">
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #080916;
+        --panel: rgba(17, 20, 39, 0.88);
+        --panel-2: rgba(23, 26, 48, 0.96);
+        --text: #f5f7ff;
+        --muted: #bcc2d9;
+        --line: rgba(255, 255, 255, 0.12);
+        --accent: #f5b63e;
+        --accent-2: #7f8cff;
+        --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top right, rgba(127, 140, 255, 0.16), transparent 28rem),
+          linear-gradient(145deg, #080916 0%, #111427 52%, #0d1120 100%);
+      }
+
+      a { color: inherit; }
+
+      .shell {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+        backdrop-filter: blur(18px);
+        background: rgba(8, 9, 22, 0.72);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .topbar {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+      }
+
+      .brand strong { display: block; font-size: 18px; }
+      .brand span { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .lang-switch {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .lang-switch button {
+        appearance: none;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        min-height: 40px;
+        padding: 0 12px;
+        border-radius: 999px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .lang-switch button[aria-pressed="true"] {
+        border-color: rgba(245, 182, 62, 0.7);
+        background: rgba(245, 182, 62, 0.15);
+      }
+
+      .links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      main { padding: 52px 0 44px; }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+        gap: 20px;
+        align-items: start;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-copy { padding: 34px; }
+      .side { padding: 24px; background: var(--panel-2); }
+
+      .eyebrow {
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      h1 {
+        margin: 14px 0 14px;
+        font-size: clamp(40px, 7vw, 72px);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .button.primary {
+        background: linear-gradient(135deg, var(--accent), #ffcc66);
+        color: #201603;
+      }
+
+      .button.secondary {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .section {
+        margin-top: 22px;
+        padding: 24px;
+      }
+
+      .section h2 {
+        margin: 0 0 14px;
+        font-size: 22px;
+      }
+
+      .list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .list li {
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      .list strong { color: var(--text); }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 22px;
+      }
+
+      .card {
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .note {
+        border-left: 4px solid var(--accent-2);
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+
+      .footer a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      @media (max-width: 900px) {
+        .hero, .grid { grid-template-columns: 1fr; }
+        .topbar { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      }
+
+      @media (max-width: 640px) {
+        main { padding-top: 32px; }
+        .hero-copy { padding: 24px; }
+        .side, .section { padding: 20px; }
+        h1 { font-size: clamp(34px, 12vw, 52px); }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell topbar">
+        <a class="brand" href="/alphax-app/" aria-label="AlphaX Home">
+          <img src="/alphax-app/logo.png" alt="AlphaX">
+          <span>
+            <strong>AlphaX</strong>
+            <span data-i18n="brandTag">Política de privacidade</span>
+          </span>
+        </a>
+
+        <div class="links">
+          <div class="lang-switch" aria-label="Language selector">
+            <button type="button" data-lang="pt-BR">PT</button>
+            <button type="button" data-lang="en">EN</button>
+            <button type="button" data-lang="es">ES</button>
+          </div>
+          <a href="/alphax-app/" data-i18n="homeLink">Início</a>
+          <a href="/alphax-app/support/" data-i18n="supportLink">Support</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero">
+        <div class="panel hero-copy">
+          <div class="eyebrow" data-i18n="eyebrow">Privacidade e transparência</div>
+          <h1 data-i18n="title">Política de Privacidade</h1>
+          <p class="lead" data-i18n="lead">Explicamos de forma direta quais dados coletamos, por que coletamos e como você pode falar com a equipe da AlphaX sobre privacidade.</p>
+
+          <div class="actions">
+            <a class="button primary" href="mailto:alphaxapp@gmail.com" data-i18n="contactButton">Falar com a AlphaX</a>
+            <a class="button secondary" href="/alphax-app/support/" data-i18n="supportButton">Ir para suporte</a>
+          </div>
+        </div>
+
+        <aside class="panel side">
+          <div class="card note">
+            <h3 data-i18n="summaryTitle">Resumo rápido</h3>
+            <p data-i18n="summaryText">Usamos apenas os dados necessários para ativação, suporte e segurança. Não vendemos informações pessoais.</p>
+          </div>
+
+          <div class="section" style="padding: 0; margin-top: 18px;">
+            <h2 data-i18n="detailsTitle">O que isso cobre</h2>
+            <ul class="list">
+              <li><strong data-i18n="item1Title">Ativação</strong> <span data-i18n="item1Text">- identificadores do dispositivo e estado de licença.</span></li>
+              <li><strong data-i18n="item2Title">Suporte</strong> <span data-i18n="item2Text">- dados enviados quando você abre um chamado.</span></li>
+              <li><strong data-i18n="item3Title">Segurança</strong> <span data-i18n="item3Text">- proteção contra abuso, fraude e acesso indevido.</span></li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="panel section">
+        <h2 data-i18n="section1Title">Dados que coletamos</h2>
+        <p data-i18n="section1Text">A AlphaX coleta apenas as informações necessárias para operar o serviço, como identificadores técnicos do dispositivo, dados de ativação e mensagens enviadas ao suporte. Sempre que possível, minimizamos os dados e evitamos coletar conteúdo desnecessário.</p>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3 data-i18n="card1Title">Como usamos</h3>
+          <p data-i18n="card1Text">Usamos os dados para autenticar a ativação, responder solicitações de suporte, melhorar o serviço e prevenir abuso.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="card2Title">Retenção</h3>
+          <p data-i18n="card2Text">Guardamos dados apenas pelo tempo necessário para cumprir suporte, operação e obrigações legais aplicáveis.</p>
+        </article>
+        <article class="card">
+          <h3 data-i18n="card3Title">Contato</h3>
+          <p data-i18n="card3Text">Para solicitações de acesso, correção ou exclusão, escreva para alphaxapp@gmail.com.</p>
+        </article>
+      </section>
+
+      <section class="panel section">
+        <h2 data-i18n="section2Title">Seus direitos</h2>
+        <p data-i18n="section2Text">Você pode pedir esclarecimentos sobre os dados usados na ativação, solicitar correção de informações incorretas ou pedir a remoção quando isso for permitido pelas regras de operação e pela lei aplicável.</p>
+      </section>
+
+      <footer class="footer">
+        <p data-i18n="footerText">AlphaX. <a href="/alphax-app/">Início</a> · <a href="/alphax-app/support/">Support</a> · <a href="mailto:alphaxapp@gmail.com">alphaxapp@gmail.com</a></p>
+      </footer>
+    </main>
+
+    <script>
+      const translations = {
+        "pt-BR": {
+          brandTag: "Política de privacidade",
+          eyebrow: "Privacidade e transparência",
+          title: "Política de Privacidade",
+          lead: "Explicamos de forma direta quais dados coletamos, por que coletamos e como você pode falar com a equipe da AlphaX sobre privacidade.",
+          contactButton: "Falar com a AlphaX",
+          supportButton: "Ir para suporte",
+          summaryTitle: "Resumo rápido",
+          summaryText: "Usamos apenas os dados necessários para ativação, suporte e segurança. Não vendemos informações pessoais.",
+          detailsTitle: "O que isso cobre",
+          item1Title: "Ativação",
+          item1Text: "- identificadores do dispositivo e estado de licença.",
+          item2Title: "Suporte",
+          item2Text: "- dados enviados quando você abre um chamado.",
+          item3Title: "Segurança",
+          item3Text: "- proteção contra abuso, fraude e acesso indevido.",
+          section1Title: "Dados que coletamos",
+          section1Text: "A AlphaX coleta apenas as informações necessárias para operar o serviço, como identificadores técnicos do dispositivo, dados de ativação e mensagens enviadas ao suporte. Sempre que possível, minimizamos os dados e evitamos coletar conteúdo desnecessário.",
+          card1Title: "Como usamos",
+          card1Text: "Usamos os dados para autenticar a ativação, responder solicitações de suporte, melhorar o serviço e prevenir abuso.",
+          card2Title: "Retenção",
+          card2Text: "Guardamos dados apenas pelo tempo necessário para cumprir suporte, operação e obrigações legais aplicáveis.",
+          card3Title: "Contato",
+          card3Text: "Para solicitações de acesso, correção ou exclusão, escreva para alphaxapp@gmail.com.",
+          section2Title: "Seus direitos",
+          section2Text: "Você pode pedir esclarecimentos sobre os dados usados na ativação, solicitar correção de informações incorretas ou pedir a remoção quando isso for permitido pelas regras de operação e pela lei aplicável.",
+          homeLink: "Início",
+          supportLink: "Support",
+          footerText: "AlphaX."
+        },
+        en: {
+          brandTag: "Privacy policy",
+          eyebrow: "Privacy and transparency",
+          title: "Privacy Policy",
+          lead: "We explain in plain language which data we collect, why we collect it, and how you can contact the AlphaX team about privacy.",
+          contactButton: "Contact AlphaX",
+          supportButton: "Go to support",
+          summaryTitle: "Quick summary",
+          summaryText: "We only use the data needed for activation, support, and security. We do not sell personal information.",
+          detailsTitle: "What this covers",
+          item1Title: "Activation",
+          item1Text: "- device identifiers and license status.",
+          item2Title: "Support",
+          item2Text: "- data you send when opening a ticket.",
+          item3Title: "Security",
+          item3Text: "- protection against abuse, fraud, and unauthorized access.",
+          section1Title: "Data we collect",
+          section1Text: "AlphaX collects only the information required to run the service, such as technical device identifiers, activation data, and support messages. Whenever possible, we minimize data and avoid collecting unnecessary content.",
+          card1Title: "How we use it",
+          card1Text: "We use the data to authenticate activation, answer support requests, improve the service, and prevent abuse.",
+          card2Title: "Retention",
+          card2Text: "We keep data only as long as needed for support, operations, and applicable legal obligations.",
+          card3Title: "Contact",
+          card3Text: "For access, correction, or deletion requests, write to alphaxapp@gmail.com.",
+          section2Title: "Your rights",
+          section2Text: "You can ask for clarification about the data used for activation, request correction of inaccurate information, or request deletion when permitted by operation rules and applicable law.",
+          homeLink: "Home",
+          supportLink: "Support",
+          footerText: "AlphaX."
+        },
+        es: {
+          brandTag: "Política de privacidad",
+          eyebrow: "Privacidad y transparencia",
+          title: "Política de Privacidad",
+          lead: "Explicamos en lenguaje claro qué datos recopilamos, por qué los recopilamos y cómo puedes contactar al equipo de AlphaX sobre privacidad.",
+          contactButton: "Contactar AlphaX",
+          supportButton: "Ir al soporte",
+          summaryTitle: "Resumen rápido",
+          summaryText: "Solo usamos los datos necesarios para activación, soporte y seguridad. No vendemos información personal.",
+          detailsTitle: "Qué cubre",
+          item1Title: "Activación",
+          item1Text: "- identificadores del dispositivo y estado de licencia.",
+          item2Title: "Soporte",
+          item2Text: "- datos que envías al abrir un caso.",
+          item3Title: "Seguridad",
+          item3Text: "- protección contra abuso, fraude y acceso no autorizado.",
+          section1Title: "Datos que recopilamos",
+          section1Text: "AlphaX recopila solo la información necesaria para operar el servicio, como identificadores técnicos del dispositivo, datos de activación y mensajes enviados al soporte. Siempre que es posible, minimizamos los datos y evitamos recopilar contenido innecesario.",
+          card1Title: "Cómo los usamos",
+          card1Text: "Usamos los datos para autenticar la activación, responder solicitudes de soporte, mejorar el servicio y prevenir abusos.",
+          card2Title: "Retención",
+          card2Text: "Guardamos los datos solo durante el tiempo necesario para soporte, operación y obligaciones legales aplicables.",
+          card3Title: "Contacto",
+          card3Text: "Para solicitudes de acceso, corrección o eliminación, escribe a alphaxapp@gmail.com.",
+          section2Title: "Tus derechos",
+          section2Text: "Puedes pedir aclaraciones sobre los datos usados en la activación, solicitar corrección de información incorrecta o pedir eliminación cuando lo permitan las reglas de operación y la ley aplicable.",
+          homeLink: "Inicio",
+          supportLink: "Support",
+          footerText: "AlphaX."
+        }
+      };
+
+      const supportedLanguages = ["pt-BR", "en", "es"];
+      const preferredLanguage = (() => {
+        const saved = localStorage.getItem("alphax-language");
+        if (saved && supportedLanguages.includes(saved)) {
+          return saved;
+        }
+        const browser = navigator.language || "pt-BR";
+        if (browser.toLowerCase().startsWith("pt")) return "pt-BR";
+        if (browser.toLowerCase().startsWith("es")) return "es";
+        return "en";
+      })();
+
+      function setLanguage(language) {
+        const dictionary = translations[language] || translations["pt-BR"];
+        document.documentElement.lang = language;
+        document.title = language === "en" ? "AlphaX | Privacy Policy" : language === "es" ? "AlphaX | Política de Privacidad" : "AlphaX | Política de Privacidade";
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (dictionary[key]) {
+            element.innerHTML = dictionary[key];
+          }
+        });
+
+        document.querySelectorAll(".lang-switch button").forEach((button) => {
+          button.setAttribute("aria-pressed", button.dataset.lang === language ? "true" : "false");
+        });
+
+        localStorage.setItem("alphax-language", language);
+      }
+
+      document.querySelectorAll(".lang-switch button").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.lang));
+      });
+
+      setLanguage(preferredLanguage);
+    </script>
+  </body>
+</html>
